@@ -65,11 +65,11 @@ use PhpAmqpLib\Message\AMQPMessage;
 if(isset($_POST['use_button']))
 {
     echo "hey";
-    $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
+    $connection = new AMQPConnection(192.168.1.16, 5672, 'guest', 'guest');
     $channel = $connection->channel();
-    $channel->queue_declare('renderizar', false, false, false, false);
+    $channel->queue_declare('publish', false, false, false, false);
     $msg = new AMQPMessage('Hello World!');
-    $channel->basic_publish($msg, '', 'renderizar');
+    $channel->basic_publish($msg, '', 'publish');
     echo " [x] Sent 'Hello World!'\n";
     $channel->close();
     $connection->close();
