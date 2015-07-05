@@ -65,7 +65,7 @@ use PhpAmqpLib\Message\AMQPMessage;
 if(isset($_POST['use_button']))
 {
     echo "hey";
-    $connection = new AMQPConnection(192.168.1.16, 5672, 'guest', 'guest');
+    $connection = new AMQPConnection("192.168.1.16", 5672, 'guest', 'guest');
     $channel = $connection->channel();
     $channel->queue_declare('publish', false, false, false, false);
     $msg = new AMQPMessage('Hello World!');
