@@ -34,8 +34,8 @@
 	<input type='submit' name='use_button' value='something' />
       </form>
       <div class="progress">
-	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-	  40%
+	<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+	  50% Complete (info)
 	</div>
       </div>
     </div>
