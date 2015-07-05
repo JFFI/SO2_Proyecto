@@ -12,6 +12,15 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/socket.io.js"></script>
 <script src="js/publish.js"></script>
+<style>
+            .progress {
+                height: 300px;
+            }
+            .progress > svg {
+                height: 100%;
+                display: block;
+            }           
+</style>
 </head>
 <body>
 <div class="navbar">
@@ -33,11 +42,12 @@
       <form action='' method='post'>
 	<input type='submit' name='use_button' value='something' />
       </form>
-      <div class="progress">
-	<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-	  <span class="sr-only">70% Complete</span>
-	</div>
-      </div>
+      
+      <div class="progress" id="progress"></div>
+
+        <script src="js/progressbar.js"></script>
+
+        <script src="main.js"></script>
     </div>
   </div>
 </div>
