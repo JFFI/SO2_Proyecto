@@ -10,6 +10,8 @@
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery-1.10.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/socket.io.js"></script>
+<script src="js/publish.js"></script>
 </head>
 <body>
 <div class="navbar">
@@ -31,6 +33,11 @@
       <form action='' method='post'>
 	<input type='submit' name='use_button' value='something' />
       </form>
+      <div class="progress">
+	<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+	  40%
+	</div>
+      </div>
     </div>
   </div>
 </div>
@@ -41,10 +48,20 @@
   </div>
 </div>
 
- <?php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+use PhpAmqpLib\Connection\AMQPConnection;
+use PhpAmqpLib\Message\AMQPMessage;
 if(isset($_POST['use_button']))
 {
     echo "hey";
+    $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
+    $channel = $connection->channel();
+    $channel->queue_declare('renderizar', false, false, false, false);
+    $msg = new AMQPMessage('Hello World!');
+    $channel->basic_publish($msg, '', 'renderizar');
+    echo " [x] Sent 'Hello World!'\n";
+    $channel->close();
+    $connection->close();
 }
-
-?> 
+?>
