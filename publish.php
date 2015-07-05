@@ -1,10 +1,4 @@
- <?php
-if(isset($_POST['use_button']))
-{
-    echo "hey";
-}
 
-?> 
 <html>
   <head>
     <title>Hola mundo</title>
@@ -15,3 +9,11 @@ if(isset($_POST['use_button']))
     </form>
   </body>
 </html>
+
+ <?php
+if(isset($_POST['use_button']))
+{
+    echo "hey";
+}
+
+?> 
