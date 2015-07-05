@@ -5,5 +5,5 @@ window.onload = function onLoad() {
         easing: 'easeInOut'
     });
 
-    circle.animate(1);
+    circle.animate(0.5);
 };
