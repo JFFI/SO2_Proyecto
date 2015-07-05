@@ -47,7 +47,7 @@
 
         <script src="js/progressbar.js"></script>
 
-        <script src="main.js"></script>
+        <script src="porcentaje.js"></script>
     </div>
   </div>
 </div>
