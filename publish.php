@@ -33,9 +33,8 @@
       <form action='' method='post'>
 	<input type='submit' name='use_button' value='something' />
       </form>
-       <div class="progress">
-	<div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
-	  <span class="sr-only">70% Complete</span>
+      <div id="container" style="width:100%; height:50px; border:1px solid black;">
+	<div id="progress-bar" style="width:50%;height:45px;">
 	</div>
       </div>
     </div>
