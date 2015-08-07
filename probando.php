@@ -1,0 +1,26 @@
+<doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ProgressBar.js - Minimal Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            .progress {
+                height: 300px;
+            }
+            .progress > svg {
+                height: 100%;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="progress" id="progress"></div>
+
+        <script src="js/progressbar.js"></script>
+
+        <script src="js/porcentaje.js"></script>
+    </body>
+</html>
